@@ -34,7 +34,7 @@ function 가입(이벤트) {
     닉네임 = 로그인.querySelector("#닉네임").value;
     localStorage.setItem("닉네임", 닉네임);
     로그인.classList.remove("가림");
-    document.body.removeChild(로그인);
+    document.querySelector("#중간위").removeChild(로그인);
     환영인사();
     setInterval(환영인사, 60000);
 }
