@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>모멘텀 카피</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="소스/스타일.css" />
+  </head>
+
+  <body>
+    <div id="상단">
+        <h4 id="날씨틀">
+            <button id="초기화">위치 초기화</button>
+            <span id="날씨"></span>
+            <span id="지역"></span>
+        </h4>
+    </div>
+    <div id="상단빈공간"></div>
+    <div id="시계틀">
+        <div id="정오" class="균형">
+            <span id="정오"></span>
+        </div>
+        <div id="시계">
+            <h1 id="시계"></h1>
+        </div>
+        <div id="표시스위치" class="스위치틀 균형">
+            <span>24시간 기준</span>
+            <label class="스위치라벨">
+                <span class="슬라이더"></span>
+            </label>
+        </div>
+    </div>
+    <div id="중간위">
+        <form id="로그인", class="가림">
+            닉네임 : <input id="닉네임" type="text" min="4" max="30" required>
+        </form>
+        <h2 id="환영", class="가림"></h2>
+    </div>
+    <div id="중간">
+        <div class="균형 투명"></div>
+        <form id="목표">
+            <h3>할 일 목록</h3>
+            <input id="할일" required>
+        </form>
+        <div id="삭제버튼" class="균형">
+            <div id="과거표시스위치" class="스위치틀">
+                <span>지난 날짜 표시</span>
+                <label class="스위치라벨">
+                    <span class="슬라이더"></span>
+                </label>
+            </div>
+            <button id="지난날짜삭제">지난 날짜 삭제</button>
+            <button id="완료한일삭제">완료한 일 삭제</button>
+        </div>
+    </div>
+    <div id="중간아래">
+        <ul id="할일목록"></ul>
+    </div>
+    <div id="명언틀">
+        <p id="명언"></p>
+        <p id="사람"></p>
+        <label>
+            <span>명언 선택 범위 : </span>
+            <button id="범위변경버튼"></button>
+        </label>
+    </div>
+    <script src="src/시계.js"></script>
+    <script src="src/로그인.js"></script>
+    <script src="src/할일목록.js"></script>
+    <script src="src/배경.js"></script>
+    <script src="src/날씨.js"></script>
+    <script src="src/명언.js"></script>
+  </body>
+</html>
