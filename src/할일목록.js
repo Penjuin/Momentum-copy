@@ -4,6 +4,7 @@ const 할일목록 = document.querySelector("#할일목록");
 let 저장할목록 = [];
 let 표시할목록 = [];
 const 저장소키 = "할일";
+let 저장된목록 = JSON.parse(localStorage.getItem(저장소키));
 const date = new Date();
 let 등록시간 = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
 
@@ -40,15 +41,17 @@ function 할일표시(오브젝트) {
     틀.appendChild(목록);
     const 완료버튼 = document.createElement("input")
     완료버튼.type = "checkbox";
-    완료버튼.addEventListener("click", 할일토글)
     if(오브젝트.완료 === true) {
         완료버튼.setAttribute("checked", "")
+        목록.classList.add("완료");
     }
+    완료버튼.addEventListener("click", 할일토글)
     목록.appendChild(완료버튼);
     const 내용 = document.createElement("span");
     내용.innerText = 오브젝트.내용;
     목록.appendChild(내용);
     const 삭제버튼 = document.createElement("span");
+    삭제버튼.classList.add("삭제");
     삭제버튼.innerText = "❌";
     삭제버튼.addEventListener("click", 할일삭제)
     틀.appendChild(삭제버튼);
@@ -56,10 +59,11 @@ function 할일표시(오브젝트) {
 }
 
 function 할일토글(이벤트) {
-    const 완료한일 = 이벤트.target.parentElement;
-    완료한일.classList.toggle("완료");
+    const 체크박스 = 이벤트.target.parentElement;
+    const 완료한일 = 체크박스.parentElement;
+    체크박스.classList.toggle("완료");
     let 완료;
-    if(완료한일.classList.contains("완료")) {
+    if(체크박스.classList.contains("완료")) {
         완료 = true;
     } else {
         완료 = false;
@@ -109,8 +113,6 @@ function 과거표시전환() {
 }
 
 과거표시스위치.addEventListener("click", 과거표시전환)
-
-let 저장된목록 = JSON.parse(localStorage.getItem(저장소키));
 
 function 저장목록로드() {
     while(할일목록.firstChild) {

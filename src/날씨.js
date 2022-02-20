@@ -15,8 +15,8 @@ function 성공(위치) {
 }
 
 function 날씨확인() {
-    const 지역링크 = `http://api.openweathermap.org/geo/1.0/reverse?lat=${위도}&lon=${경도}&appid=${API키}`
-    const 날씨링크 = `http://api.openweathermap.org/data/2.5/weather?lat=${위도}&lon=${경도}&units=metric&appid=${API키}&lang=kr`
+    const 지역링크 = `https://api.openweathermap.org/geo/1.0/reverse?lat=${위도}&lon=${경도}&appid=${API키}`
+    const 날씨링크 = `https://api.openweathermap.org/data/2.5/weather?lat=${위도}&lon=${경도}&units=metric&appid=${API키}&lang=kr`
     
     fetch(지역링크).then(응답 => 응답.json())
     .then(데이터 => {

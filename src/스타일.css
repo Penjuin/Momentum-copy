@@ -105,6 +105,10 @@ li {
   justify-content: space-between;
 }
 
+#중간아래 .삭제 {
+  cursor: pointer;
+}
+
 #명언틀 {
   padding-bottom: 30px;
 }

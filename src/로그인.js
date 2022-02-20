@@ -21,7 +21,7 @@ function 환영인사() {
 
 if(저장닉네임 !== null) {
     닉네임 = 저장닉네임;
-    document.body.querySelector("#중간위").removeChild(로그인);
+    document.querySelector("#중간위").removeChild(로그인);
     환영인사();
     setInterval(환영인사, 60000);
 } else {
